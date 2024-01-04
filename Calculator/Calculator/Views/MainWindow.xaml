@@ -1,0 +1,289 @@
+﻿<!--  MainWindow XAML  -->
+
+<Window
+    x:Class="Calculator.Views.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:t1="clr-namespace:Calculator.Resources"
+    xmlns:viewmodels="clr-namespace:Calculator.ViewModels"
+    Title="{x:Static t1:Resource.Title}"
+    Width="310"
+    Height="520"
+    d:DataContext="{d:DesignInstance Type=viewmodels:Displayer}"
+    FontFamily="Consolas"
+    Icon="../Resources/calc_icon.ico"
+    ResizeMode="NoResize"
+    mc:Ignorable="d">
+
+    <!--  Main Grid Layout  -->
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <!--  Rows definition for the grid  -->
+            <RowDefinition Height="160" />
+            <RowDefinition Height="60" />
+            <RowDefinition Height="60" />
+            <RowDefinition Height="60" />
+            <RowDefinition Height="60" />
+            <RowDefinition Height="60" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <!--  Columns definition for the grid  -->
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!--  Backspace Button  -->
+        <Button
+            x:Name="Backspace"
+            Grid.Row="0"
+            Grid.Column="3"
+            Width="30pt"
+            Height="30pt"
+            Margin="0,0,2,0"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Bottom"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Background="Transparent"
+            BorderThickness="0"
+            Click="Backspace_Click">
+            <Image Height="12pt" Source="../Resources/backspace.png" />
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20" />
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--  Result TextBlock  -->
+        <TextBlock
+            x:Name="Result"
+            Grid.ColumnSpan="4"
+            Margin="2,0,10,40"
+            VerticalAlignment="bottom"
+            FontSize="25"
+            Foreground="Gray"
+            Text="{Binding Displayer.ResultOutput}"
+            TextAlignment="Right" />
+
+        <!--  Output Viewbox (Resizable TextBlock)  -->
+        <Viewbox
+            Grid.ColumnSpan="4"
+            MaxWidth="300"
+            MaxHeight="80"
+            Margin="2,2,10,70"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center"
+            StretchDirection="DownOnly">
+            <TextBlock
+                x:Name="Output"
+                Grid.ColumnSpan="4"
+                VerticalAlignment="top"
+                FontSize="50"
+                Text="{Binding Displayer.CalculationOutput}"
+                TextAlignment="Right" />
+        </Viewbox>
+
+        <!--  Number Buttons (7, 8, 9, 4, 5, 6, 1, 2, 3, 0)  -->
+        <Button
+            x:Name="SevenBtn"
+            Grid.Row="2"
+            Grid.Column="0"
+            Click="NumBtn_Click"
+            Content="7"
+            FontSize="25"
+            FontWeight="bold"
+            Style="{StaticResource button}" />
+        <Button
+            x:Name="EightBtn"
+            Grid.Row="2"
+            Grid.Column="1"
+            Click="NumBtn_Click"
+            Content="8"
+            FontSize="25"
+            FontWeight="bold"
+            Style="{StaticResource button}" />
+        <Button
+            x:Name="NineBtn"
+            Grid.Row="2"
+            Grid.Column="2"
+            Click="NumBtn_Click"
+            Content="9"
+            FontSize="25"
+            FontWeight="bold"
+            Style="{StaticResource button}" />
+        <Button
+            x:Name="FourBtn"
+            Grid.Row="3"
+            Grid.Column="0"
+            Click="NumBtn_Click"
+            Content="4"
+            FontSize="25"
+            FontWeight="bold"
+            Style="{StaticResource button}" />
+        <Button
+            x:Name="FiveBtn"
+            Grid.Row="3"
+            Grid.Column="1"
+            Click="NumBtn_Click"
+            Content="5"
+            FontSize="25"
+            FontWeight="bold"
+            Style="{StaticResource button}" />
+        <Button
+            x:Name="SixBtn"
+            Grid.Row="3"
+            Grid.Column="2"
+            Click="NumBtn_Click"
+            Content="6"
+            FontSize="25"
+            FontWeight="bold"
+            Style="{StaticResource button}" />
+        <Button
+            x:Name="OneBtn"
+            Grid.Row="4"
+            Grid.Column="0"
+            Click="NumBtn_Click"
+            Content="1"
+            FontSize="25"
+            FontWeight="bold"
+            Style="{StaticResource button}" />
+        <Button
+            x:Name="TwoBtn"
+            Grid.Row="4"
+            Grid.Column="1"
+            Click="NumBtn_Click"
+            Content="2"
+            FontSize="25"
+            FontWeight="bold"
+            Style="{StaticResource button}" />
+        <Button
+            x:Name="ThreeBtn"
+            Grid.Row="4"
+            Grid.Column="2"
+            Click="NumBtn_Click"
+            Content="3"
+            FontSize="25"
+            FontWeight="bold"
+            Style="{StaticResource button}" />
+        <Button
+            x:Name="NullBtn"
+            Grid.Row="5"
+            Grid.Column="1"
+            Click="NumBtn_Click"
+            Content="0"
+            FontSize="25"
+            FontWeight="bold"
+            Style="{StaticResource button}" />
+
+        <!--  Operation Buttons (+, -, ÷, ×)  -->
+        <Button
+            x:Name="PlusBtn"
+            Grid.Row="4"
+            Grid.Column="3"
+            Click="OperationBtn_Click"
+            Content="+"
+            FontSize="25"
+            FontWeight="bold"
+            Style="{StaticResource operation}" />
+        <Button
+            x:Name="MinusBtn"
+            Grid.Row="3"
+            Grid.Column="3"
+            Click="OperationBtn_Click"
+            Content="-"
+            FontSize="25"
+            FontWeight="bold"
+            Style="{StaticResource operation}" />
+        <Button
+            x:Name="DivideBtn"
+            Grid.Row="1"
+            Grid.Column="3"
+            Click="OperationBtn_Click"
+            Content="÷"
+            FontSize="25"
+            FontWeight="bold"
+            Style="{StaticResource operation}" />
+        <Button
+            x:Name="MultiplyBtn"
+            Grid.Row="2"
+            Grid.Column="3"
+            Click="OperationBtn_Click"
+            Content="×"
+            FontSize="25"
+            FontWeight="bold"
+            Style="{StaticResource operation}" />
+
+        <!--  Equal Button  -->
+        <Button
+            x:Name="EqualBtn"
+            Grid.Row="5"
+            Grid.Column="3"
+            Click="EqualBtn_Click"
+            Content="="
+            FontSize="25"
+            FontWeight="bold"
+            Style="{StaticResource equal}" />
+
+        <!--  Dot Button  -->
+        <Button
+            x:Name="DotBtn"
+            Grid.Row="5"
+            Grid.Column="2"
+            Click="DotBtn_Click"
+            Content="."
+            FontSize="25"
+            FontWeight="bold"
+            Style="{StaticResource button}" />
+
+        <!--  Clear Button  -->
+        <Button
+            x:Name="EraseBtn"
+            Grid.Row="1"
+            Grid.Column="0"
+            Click="EraseBtn_Click"
+            Content="C"
+            FontSize="25"
+            FontWeight="bold"
+            Style="{StaticResource clear}" />
+
+        <!--  Bracket Button  -->
+        <Button
+            x:Name="BracketBtn"
+            Grid.Row="1"
+            Grid.Column="1"
+            Click="BracketBtn_Click"
+            Content="()"
+            FontSize="25"
+            FontWeight="bold"
+            Style="{StaticResource operation}" />
+
+        <!--  Percent Button  -->
+        <Button
+            x:Name="ProcentBtn"
+            Grid.Row="1"
+            Grid.Column="2"
+            Click="ProcentBtn_Click"
+            Content="%"
+            FontSize="25"
+            FontWeight="bold"
+            Style="{StaticResource operation}" />
+
+        <!--  Sign Switch Button  -->
+        <Button
+            x:Name="SignSwitchBtn"
+            Grid.Row="5"
+            Grid.Column="0"
+            Click="SignSwitchBtn_Click"
+            Content="±"
+            FontSize="25"
+            FontWeight="bold"
+            Style="{StaticResource button}" />
+    </Grid>
+</Window>

@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Comment CommentText="ViewModels&#xD;&#xA;">
+    <Position X="7.302" Y="0.5" Height="0.344" Width="4.605" />
+  </Comment>
+  <Comment CommentText="Views&#xD;&#xA;">
+    <Position X="0.5" Y="0.5" Height="0.406" Width="2.733" />
+  </Comment>
+  <Comment CommentText="Models&#xD;&#xA;">
+    <Position X="13.303" Y="0.536" Height="0.391" Width="3.006" />
+  </Comment>
+  <Comment CommentText="Services&#xD;&#xA;">
+    <Position X="4.067" Y="0.515" Height="0.355" Width="2.251" />
+  </Comment>
+  <Class Name="Calculator.ViewModels.Displayer">
+    <Position X="7.25" Y="1.5" Width="2.5" />
+    <Members>
+      <Field Name="_calculationOutput" Hidden="true" />
+      <Field Name="_resultOutput" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAAAAAAAAAAARAAAAAAAAAAACAAABAAAI=</HashCode>
+      <FileName>ViewModels\Displayer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Calculator.ViewModels.ObservableObject">
+    <Position X="10.25" Y="1.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\ObservableObject.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Calculator.Models.Validator">
+    <Position X="16.25" Y="2.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAGAAAAAAAAQAAAAAAAAAAAAAAAAAEAAAAAAABAAAA=</HashCode>
+      <FileName>Models\Validator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Calculator.Models.Operator">
+    <Position X="13.25" Y="1.5" Width="2.75" />
+    <Members>
+      <Field Name="_expression" Hidden="true" />
+      <Field Name="_result" Hidden="true" />
+      <Field Name="closeBracketCount" Hidden="true" />
+      <Field Name="ClosedParetheses" Hidden="true" />
+      <Field Name="openBracketCount" Hidden="true" />
+      <Field Name="OpenParetheses" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAEEAAAAAAAgAAACgAEAIEwAgCgAAAAQAAAAmAFAAAA=</HashCode>
+      <FileName>Models\Operator.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Calculator.Services.UIController">
+    <Position X="4" Y="1.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAEAAQEAAAAgAgAgAAAAAABAAAAAAAAAAkABgACQIAA=</HashCode>
+      <FileName>Services\UIController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Calculator.Views.MainWindow">
+    <Position X="0.75" Y="1.25" Width="2.25" />
+    <Members>
+      <Field Name="AppController" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAgAAAIABAAAAACAACAAAAAAAAAAAAAAAgoBAAAAQAA=</HashCode>
+      <FileName>Views\MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="Calculator.ViewModels.IDisplayer">
+    <Position X="7.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAACAAABAAAI=</HashCode>
+      <FileName>ViewModels\IDisplayer.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Calculator.Models.IOperator">
+    <Position X="11.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEEAAAAAAAgAAAAgAAAAEwAACgAAAAQAAAACABAAAA=</HashCode>
+      <FileName>Models\IOperator.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
